@@ -1,5 +1,5 @@
 {
-  "name": "nice-alert",
+  "name": "@josecienty/nice-alert",
   "version": "1.0.0",
   "description": "Librería de alertas tipo SweetAlert con diseño moderno (glassmorphism). Sin dependencias, compatible con JS y TypeScript.",
   "author": "",
@@ -54,10 +54,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tu-usuario/nice-alert.git"
+    "url": "git+https://github.com/josecienty/nice-alert.git"
   },
-  "homepage": "https://github.com/tu-usuario/nice-alert#readme",
+  "homepage": "https://github.com/josecienty/nice-alert#readme",
   "bugs": {
-    "url": "https://github.com/tu-usuario/nice-alert/issues"
+    "url": "https://github.com/josecienty/nice-alert/issues"
   }
 }
