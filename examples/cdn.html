@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>NiceAlert — ejemplo CDN</title>
+  <!-- En local, apunta a ../dist/nice-alert.css tras correr `npm run build` -->
+  <link rel="stylesheet" href="../dist/nice-alert.css" />
+  <style>
+    body { font-family: sans-serif; display: flex; gap: 12px; padding: 40px; }
+    button { padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer; background: #7c5cff; color: #fff; }
+  </style>
+</head>
+<body>
+  <button id="btn-success">Success</button>
+  <button id="btn-confirm">Confirm</button>
+  <button id="btn-toast">Toast</button>
+
+  <!-- En producción, usa la CDN: https://cdn.jsdelivr.net/npm/nice-alert/dist/nice-alert.umd.js -->
+  <script src="../dist/nice-alert.umd.js"></script>
+  <script>
+    document.getElementById('btn-success').addEventListener('click', () => {
+      NiceAlert.success('¡Listo!', 'La operación se completó.');
+    });
+
+    document.getElementById('btn-confirm').addEventListener('click', async () => {
+      const result = await NiceAlert.confirm('¿Eliminar?', 'No se puede deshacer.');
+      if (result.isConfirmed) {
+        NiceAlert.success('Eliminado');
+      }
+    });
+
+    document.getElementById('btn-toast').addEventListener('click', () => {
+      NiceAlert.toast('Guardado automáticamente');
+    });
+  </script>
+</body>
+</html>

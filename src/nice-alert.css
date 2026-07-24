@@ -1,0 +1,265 @@
+/*!
+ * NiceAlert v1.0.0 - estilos
+ * Diseño glassmorphism. Puedes sobreescribir cualquiera de estas variables
+ * o clases en tu propia hoja de estilos cargada después de esta.
+ */
+:root {
+  --na-bg: rgba(255, 255, 255, 0.65);
+  --na-border: rgba(255, 255, 255, 0.35);
+  --na-blur: 18px;
+  --na-radius: 16px;
+  --na-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);
+  --na-text: #1f2430;
+  --na-muted: #6b7280;
+  --na-accent: #7c5cff;
+  --na-accent-contrast: #ffffff;
+  --na-success: #22c55e;
+  --na-error: #ef4444;
+  --na-warning: #f59e0b;
+  --na-info: #3b82f6;
+}
+
+.na-lock-scroll {
+  overflow: hidden;
+}
+
+.na-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 17, 23, 0.35);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  padding: 16px;
+}
+
+.na-overlay--show {
+  opacity: 1;
+}
+
+.na-overlay--no-backdrop {
+  background: transparent;
+}
+
+.na-overlay--toast {
+  background: transparent;
+  align-items: flex-start;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.na-popup {
+  position: relative;
+  background: var(--na-bg);
+  border: 1px solid var(--na-border);
+  border-radius: var(--na-radius);
+  box-shadow: var(--na-shadow);
+  backdrop-filter: blur(var(--na-blur));
+  -webkit-backdrop-filter: blur(var(--na-blur));
+  padding: 28px 24px 20px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  color: var(--na-text);
+  transform: scale(0.9) translateY(8px);
+  opacity: 0;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.na-popup--show {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.na-popup--hide {
+  transform: scale(0.95) translateY(4px);
+  opacity: 0;
+}
+
+.na-popup--toast {
+  max-width: 360px;
+  text-align: left;
+  padding: 14px 16px;
+  pointer-events: auto;
+  margin: 16px;
+}
+
+/* Posiciones */
+.na-pos-top { align-self: flex-start; }
+.na-pos-bottom { align-self: flex-end; }
+.na-pos-top-start { align-self: flex-start; margin-right: auto; }
+.na-pos-top-end { align-self: flex-start; margin-left: auto; }
+.na-pos-bottom-start { align-self: flex-end; margin-right: auto; }
+.na-pos-bottom-end { align-self: flex-end; margin-left: auto; }
+
+.na-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--na-muted);
+}
+
+.na-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+}
+
+.na-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.na-icon-circle { stroke: currentColor; opacity: 0.35; }
+.na-icon--success { color: var(--na-success); }
+.na-icon--error { color: var(--na-error); }
+.na-icon--warning { color: var(--na-warning); }
+.na-icon--info { color: var(--na-info); }
+.na-icon--question { color: var(--na-accent); }
+.na-icon-check, .na-icon-x, .na-icon-q { stroke: currentColor; }
+.na-icon-line { stroke: currentColor; }
+.na-icon-dot { fill: currentColor; stroke: none; }
+
+.na-title {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.na-text {
+  margin: 0 0 12px;
+  color: var(--na-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.na-html {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.na-input-wrap {
+  margin-bottom: 8px;
+}
+
+.na-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.na-input:focus {
+  border-color: var(--na-accent);
+}
+
+.na-input--error {
+  border-color: var(--na-error);
+}
+
+.na-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.na-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.na-input-error {
+  min-height: 18px;
+  color: var(--na-error);
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.na-input-error--show {
+  opacity: 1;
+}
+
+.na-timer-bar-wrap {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin: 8px 0 4px;
+}
+
+.na-timer-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--na-accent);
+}
+
+.na-footer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 13px;
+  color: var(--na-muted);
+}
+
+.na-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.na-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.15s ease;
+}
+
+.na-btn:hover {
+  filter: brightness(1.05);
+}
+
+.na-btn:active {
+  transform: scale(0.97);
+}
+
+.na-btn-confirm {
+  background: var(--na-accent);
+  color: var(--na-accent-contrast);
+}
+
+.na-btn-deny {
+  background: var(--na-error);
+  color: #fff;
+}
+
+.na-btn-cancel {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--na-text);
+}

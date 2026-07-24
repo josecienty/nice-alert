@@ -1,0 +1,63 @@
+{
+  "name": "nice-alert",
+  "version": "1.0.0",
+  "description": "Librería de alertas tipo SweetAlert con diseño moderno (glassmorphism). Sin dependencias, compatible con JS y TypeScript.",
+  "author": "",
+  "license": "MIT",
+  "keywords": [
+    "alert",
+    "modal",
+    "dialog",
+    "toast",
+    "sweetalert",
+    "glassmorphism",
+    "popup"
+  ],
+  "main": "dist/nice-alert.cjs.js",
+  "module": "dist/nice-alert.esm.js",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/nice-alert.umd.js",
+  "jsdelivr": "dist/nice-alert.umd.js",
+  "style": "dist/nice-alert.css",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/nice-alert.esm.js",
+      "require": "./dist/nice-alert.cjs.js",
+      "default": "./dist/nice-alert.cjs.js"
+    },
+    "./css": "./dist/nice-alert.css",
+    "./dist/nice-alert.css": "./dist/nice-alert.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup && npm run build:css",
+    "build:css": "node -e \"require('fs').mkdirSync('dist',{recursive:true});require('fs').copyFileSync('src/nice-alert.css','dist/nice-alert.css')\"",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tu-usuario/nice-alert.git"
+  },
+  "homepage": "https://github.com/tu-usuario/nice-alert#readme",
+  "bugs": {
+    "url": "https://github.com/tu-usuario/nice-alert/issues"
+  }
+}
