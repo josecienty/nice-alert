@@ -116,7 +116,7 @@
 }
 
 .na-popup:has(.na-btn-deny){
-    width: 440;
+    width: 440px;
 }
 
 .na-popup--show {
