@@ -319,11 +319,35 @@ class NiceAlertInstance {
     });
   }
 
+  /**
+ * Inicia el temporizador de cierre automático de la alerta.
+ *
+ * Si la barra de progreso está habilitada, reinicia su estado visual,
+ * fuerza un reflow para garantizar que el navegador aplique correctamente
+ * los estilos iniciales y, posteriormente, anima su ancho desde `100%`
+ * hasta `0%` durante el tiempo configurado.
+ *
+ * Al finalizar el temporizador, la alerta se cierra automáticamente
+ * con el motivo de descarte `"timer"`.
+ *
+ * @private
+ * @returns {void}
+ */
   private startTimer(): void {
     const total = this.options.timer as number;
     if (this.progressBar) {
       const bar = this.progressBar.querySelector('.na-timer-bar') as HTMLDivElement;
+
+      // Estados iniciales
+      bar.style.width = '100%';
+      bar.style.transition = 'none';
+
+      // Forzar reflow
+      void bar.offsetWidth;
+
+      // Estilos iniciales
       bar.style.transition = `width ${total}ms linear`;
+
       requestAnimationFrame(() => {
         bar.style.width = '0%';
       });
