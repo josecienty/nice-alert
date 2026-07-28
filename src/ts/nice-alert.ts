@@ -5,13 +5,7 @@ import { getCurrentInstance } from "./instance-store";
 import { NiceAlertInstance } from "./nice-alert-instance";
 
 export const useNiceAlert = (): NiceAlertTypes => {
-    /**
-      * Crea y abre una nueva instancia de alerta.
-      *
-      * Acepta una configuración completa o simplemente un texto como título.
-      * Retorna una promesa que se resuelve con el resultado de la interacción
-      * del usuario.
-      */
+
     const fire = <T = unknown>(options?: NiceAlertOptions | string): Promise<NiceAlertResult<T>> => {
         assertDom();
         if (typeof options === 'string') {
@@ -36,6 +30,7 @@ export const useNiceAlert = (): NiceAlertTypes => {
     const info = (title?: string, text?: string) => {
         return fire({ icon: 'info', title, text });
     }
+
     const question = (title?: string, text?: string) => {
         return fire({ icon: 'question', title, text });
     }
