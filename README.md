@@ -13,7 +13,7 @@ npm install @josecienty/nice-alert
 
 ```ts
 import { NiceAlert } from '@josecienty/nice-alert';
-import 'nice-alert/css'; // o 'nice-alert/dist/nice-alert.css'
+import '@josecienty/nice-alert/style.css'; // o '@josecienty/nice-alert/dist/nice-alert.css'
 
 const result = await NiceAlert.fire({
   title: '¿Estás seguro?',
