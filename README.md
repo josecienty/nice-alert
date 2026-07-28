@@ -6,13 +6,13 @@ Sin dependencias. Funciona en JavaScript puro y en TypeScript (tipos incluidos).
 ## Instalación
 
 ```bash
-npm install nice-alert
+npm install @josecienty/nice-alert
 ```
 
 ## Uso con un bundler (JS o TS)
 
 ```ts
-import { NiceAlert } from 'nice-alert';
+import { NiceAlert } from '@josecienty/nice-alert';
 import 'nice-alert/css'; // o 'nice-alert/dist/nice-alert.css'
 
 const result = await NiceAlert.fire({
@@ -30,7 +30,7 @@ if (result.isConfirmed) {
 En CommonJS:
 
 ```js
-const { NiceAlert } = require('nice-alert');
+const { NiceAlert } = require('@josecienty/nice-alert');
 ```
 
 TypeScript obtiene autocompletado y tipos automáticamente (`NiceAlertOptions`,
@@ -40,9 +40,11 @@ los `.d.ts` se publican junto al paquete.
 ## Uso directo en HTML vía CDN (sin bundler)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nice-alert/dist/nice-alert.css" />
-<script src="https://cdn.jsdelivr.net/npm/nice-alert/dist/nice-alert.umd.js"></script>
+<!-- CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@josecienty/nice-alert/dist/nice-alert.css" />
+<script src="https://cdn.jsdelivr.net/npm/@josecienty/nice-alert/dist/nice-alert.umd.js"></script>
 
+<!-- Script -->
 <script>
   NiceAlert.success('¡Hola!', 'Cargado desde CDN');
 </script>
@@ -51,7 +53,7 @@ los `.d.ts` se publican junto al paquete.
 También disponible en unpkg:
 
 ```html
-<script src="https://unpkg.com/nice-alert/dist/nice-alert.umd.js"></script>
+<script src="https://unpkg.com/@josecienty/nice-alert/dist/nice-alert.umd.js"></script>
 ```
 
 ## API rápida
@@ -67,36 +69,6 @@ También disponible en unpkg:
 - `NiceAlert.close(result)` — cierra la alerta abierta actualmente
 
 Ver `src/types.ts` para el detalle completo de `NiceAlertOptions` y `NiceAlertResult`.
-
-## Desarrollo local
-
-```bash
-npm install
-npm run build      # genera dist/ (cjs, esm, umd/iife, .d.ts, css)
-npm run dev         # build en modo watch
-npm run typecheck   # solo valida tipos, sin generar archivos
-```
-
-### Salidas del build (`dist/`)
-
-| Archivo                      | Formato | Uso                                   |
-|-------------------------------|---------|----------------------------------------|
-| `nice-alert.cjs.js`           | CommonJS| `require('nice-alert')`                |
-| `nice-alert.esm.js`           | ESM     | `import` con bundlers modernos         |
-| `nice-alert.umd.js`           | IIFE/UMD| `<script>` directo / CDN               |
-| `index.d.ts`                  | Tipos   | Autocompletado en TS y JS con JSDoc    |
-| `nice-alert.css`               | CSS     | Estilos, cárgalos por separado         |
-
-## Publicar en npm
-
-```bash
-npm login
-npm run build
-npm publish
-```
-
-Al publicarse, `unpkg.com` y `cdn.jsdelivr.net` sirven automáticamente el
-paquete sin configuración adicional (leen `dist/` directo del registro npm).
 
 ## Licencia
 

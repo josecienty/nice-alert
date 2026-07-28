@@ -1,0 +1,1 @@
+declare module '@josecienty/nice-alert/css';

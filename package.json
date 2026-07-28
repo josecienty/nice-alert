@@ -1,8 +1,8 @@
 {
   "name": "@josecienty/nice-alert",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Librería de alertas tipo SweetAlert con diseño moderno (glassmorphism). Sin dependencias, compatible con JS y TypeScript.",
-  "author": "",
+  "author": "José Argüello",
   "license": "MIT",
   "keywords": [
     "alert",
@@ -30,6 +30,7 @@
       "default": "./dist/nice-alert.cjs.js"
     },
     "./css": "./dist/nice-alert.css",
+    "./style.css": "./dist/nice-alert.css",
     "./dist/nice-alert.css": "./dist/nice-alert.css"
   },
   "files": [
