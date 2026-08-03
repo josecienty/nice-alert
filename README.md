@@ -70,6 +70,11 @@ También disponible en unpkg:
 
 Ver `src/types.ts` para el detalle completo de `NiceAlertOptions` y `NiceAlertResult`.
 
+## Sitio web
+
+📘 Documentación oficial:  
+👉 https://nice-alert-docs.vercel.app/
+
 ## Licencia
 
 MIT
